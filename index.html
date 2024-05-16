@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Homepage Keren</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #8888;
+    color: #333;
+    text-align: center;
+  }
+  
+  .container{
+    border: 3px solid #777;
+    background-color: #4aa;
+    height: 250px;
+    margin: 50px;
+  }
+  
+  input{
+    margin: 2px;
+    width: 200px;
+    height: 30px;
+    background-color: #eee;
+    border: none;
+  }
+  
+  select{
+    margin-top: 10px;
+    height: 30px;
+    width: 50px;
+  }
+  
+  button{
+    margin-top: 10px;
+    height:30px;
+    width: 150px;
+  }
+  
+  #hasil {
+    font-size: 20px;
+  }
+  
+  /* Footer */
+  .footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>KALKULATOR Anjas Holo</h1>
+  
+    <input type="number" placeholder="Masukan Bilangan Pertama" id="satu">
+    <br>
+    <input type="number" placeholder="Masukan Bilangan Kedua" id="dua">
+       <br>
+       <div style="margin:7px;">
+    <select id="operator">
+      <option value="kali">X</option>
+      <option value="tamba">+</option>
+      <option value="bagi">/</option>
+      <option value="kurang">-</option>
+    </select>
+    <button onclick="hitung()">Hitung</button>
+    <br>
+    </div>
+    <span id="hasil">Hasilnya:</span>
+</div>
+
+<div class="footer">
+  &copy; 2024 KALKULATOR SEDERHANA
+</div>
+
+<script>
+  
+function hitung(){
+  const satu = parseInt(document.getElementById('satu').value);
+  const dua = parseInt(document.getElementById('dua').value);
+  const operator = document.getElementById('operator').value;
+  let hasil = '';
+  
+  switch(operator) {
+    case 'kali':
+      hasil = satu * dua;
+      break;
+    case 'tamba':
+      hasil = satu + dua;
+      break;
+    case 'bagi':
+      hasil = satu / dua;
+      break;
+    case 'kurang':
+      hasil = satu - dua;
+      break;
+    default:
+      hasil = 'Operasi tidak valid';
+  }
+  
+  document.getElementById('hasil').innerText = 'Hasilnya: ' + hasil;
+}
+</script>
+
+</body>
+</html>
